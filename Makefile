@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/10 16:02:02 by ereali            #+#    #+#              #
-#    Updated: 2021/06/10 18:36:33 by ereali           ###   ########.fr        #
+#    Updated: 2021/06/11 18:48:33 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIB = libft/libft.a
 SRC_DIR = 	$(shell find srcs -type d)
 
 ##Folder where he will store the .o
-OBJ_DIR	=
+OBJ_DIR	= obj
 
 ##Add to the vpath the folder find in SRC_DIR
 vpath %.c $(foreach dir, $(SRC_DIR), $(dir):)
@@ -52,7 +52,7 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)/%.o : %.c
 				@mkdir -p $(OBJ_DIR)
 				@echo "Compiling $< ...\c"
-				@$(CC) $(CFLAGS) $(IFLAGS) -$@ -c $<
+				@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
 				@echo " DONE"
 
 clean:

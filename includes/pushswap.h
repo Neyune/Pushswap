@@ -11,6 +11,6 @@ int     main(int argc, char **argv);
 char    **ErrorGest(char *args);
 int     *atoitab(char **tab);
 int     strisdigit(char *args);
-
+char	*ft_cpy(char const *s1, char const *s2);
 
 #endif

@@ -6,24 +6,13 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/06/10 17:51:36 by ereali           ###   ########.fr       */
+/*   Updated: 2021/06/30 11:48:07 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdlib.h>
-# include <stdio.h>
+# include "pushswap.h"
 
-/*size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}*/
-
-static char	*ft_cpy(char const *s1, char const *s2)
+char	*ft_cpy(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -51,7 +40,7 @@ static char	*ft_cpy(char const *s1, char const *s2)
 	return (result);
 }
 
-static char    *strjoinspace(char const *s1, char const *s2)
+static char    *strjoinspace(char *s1, char const *s2)
 {
 	char	*result;
 
@@ -62,24 +51,27 @@ static char    *strjoinspace(char const *s1, char const *s2)
 	if (!(s2))
 		return ((char *)s1);
 	result = ft_cpy(s1, s2);
+	free(s1);
 	return (result);
 }
 
 int main(int argc, char **argv)
 {
-/*    char    **tab;*/
+	char    **tab;
     char    *param;
     int     i;
 
     i = 1;
-	if (argc <= 1)
+	if (argc <= 2)
 		return (0);
+	param = (char *)malloc((sizeof (char) * (ft_strlen(argv[1]) + 1)));
     while (i < argc)
     {
-        param = ft_strjoin(param , argv[i]);
+        param = strjoinspace(param , argv[i]);
         i++;
     }
-/*    tab = ErrorGest(param);*/
-	free(param);
+	tab = ErrorGest(param);
+ 	if (!param)
+		free(param);
     return (0);
 }
