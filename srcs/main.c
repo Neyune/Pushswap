@@ -6,11 +6,11 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/06/30 11:48:07 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/07 14:35:51 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "pushswap.h"
+#include "push_swap.h"
 
 char	*ft_cpy(char const *s1, char const *s2)
 {
@@ -40,7 +40,7 @@ char	*ft_cpy(char const *s1, char const *s2)
 	return (result);
 }
 
-static char    *strjoinspace(char *s1, char const *s2)
+char	*strjoinspace(char *s1, char const *s2)
 {
 	char	*result;
 
@@ -55,23 +55,67 @@ static char    *strjoinspace(char *s1, char const *s2)
 	return (result);
 }
 
-int main(int argc, char **argv)
+void	Checklst(int *lst, int argc)
 {
-	char    **tab;
-    char    *param;
-    int     i;
+	int i;
 
-    i = 1;
-	if (argc <= 2)
-		return (0);
+	i = 0;
+	while (i < argc - 2)
+	{
+		if ( lst[i] > lst[i + 1])
+			return	;
+		i++;
+	}
+	free(lst);
+	exit(EXIT_SUCCESS);
+}
+
+int	*Createlst(char **argv, int argc)
+{
+	int		*lst;
+	char	*param;
+	int		i;
+
+	i = 1;
+	// printf("ARGC = %d\n", argc);
+	if (argc < 2)
+		return(0);
 	param = (char *)malloc((sizeof (char) * (ft_strlen(argv[1]) + 1)));
-    while (i < argc)
-    {
-        param = strjoinspace(param , argv[i]);
-        i++;
-    }
-	tab = ErrorGest(param);
- 	if (!param)
+	if (!param)
+		return (NULL);
+	while (i < argc)
+	{
+		param = strjoinspace(param, argv[i]);
+		i++;
+	}
+	lst = ErrorGest(param);
+	if (!param)
 		free(param);
+	return (lst);
+}
+
+int	main(int argc, char **argv)
+{
+	int		*lst;
+	t_list	*a;
+	t_list	*b;
+
+	b = NULL;
+	lst = Createlst(argv, argc);
+	Checklst(lst, argc);
+	if ((argc - 1) <= 3)
+		Sort3(lst, argc - 1);
+	a = StackGeneration(argc - 1, lst);
+	 // if (ft_lstsize(a) <= 5)
+	 // 	Shortsort(&a);
+	printf("----------------------------------------------------------------\n");
+	Push(&b ,&a);
+	PrintfChain(&a);
+	printf("----------------------------------------------------------------\n");
+	PrintfChain(&b);
+	// if (argc - 2 <= 100)
+
+	// if (argc - 2 <= 500)
+
     return (0);
 }

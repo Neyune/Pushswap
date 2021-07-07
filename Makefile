@@ -6,11 +6,11 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/10 16:02:02 by ereali            #+#    #+#              #
-#    Updated: 2021/06/11 18:48:33 by ereali           ###   ########.fr        #
+#    Updated: 2021/07/07 14:31:38 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pushswap
+NAME = push_swap
 
 INC_DIR = 	$(shell find includes -type d)
 
@@ -27,7 +27,8 @@ OBJ_DIR	= obj
 vpath %.c $(foreach dir, $(SRC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
-SRC = ErrorGest.c main.c
+SRC = ErrorManage.c main.c LeakManage.c Basics.c StackManager.c Short_sort.c \
+		Sort_fonction.c
 
 ##Transform and place every .o from SRC
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
@@ -44,9 +45,9 @@ CC =	gcc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-				make -C libft
+				make bonus -C libft
 				@echo "Compiling $(NAME) ...\c"
-				$(CC) $(OBJ) $(CFLAGS) $(IFLAGS) -I libft/ -L libft/ -l ft -o pushswap
+				$(CC) $(OBJ) $(CFLAGS) $(IFLAGS) -I libft/ -L libft/ -l ft -o push_swap
 				@echo " DONE"
 
 $(OBJ_DIR)/%.o : %.c
