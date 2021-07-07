@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 22:25:46 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 14:34:48 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/07 16:02:18 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ void	Rotate(t_list **stack)
 		t_list	*tmp;
 
 		if (!stack)
-			return ;
+				return ;
 		tmp = (*stack);
-		// (*stack) = tmp->next;
-		ft_lstadd_back(stack, (*stack));
 		(*stack) = tmp->next;
-		tmp->next = NULL;
+		ft_lstadd_back(stack, tmp);
 }
 
 void	RotateAll(t_list **stackA, t_list **stackB)
@@ -57,11 +55,11 @@ void	ReverseRotate(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (!stack)
-		return ;
-	tmp = SecondToLast(stack);
-	ft_lstadd_front(stack, GetLastStack(stack));
-	tmp->next = NULL;
+		if (!stack)
+			return ;
+		tmp = SecondToLast(stack);
+		ft_lstadd_front(stack, GetLastStack(stack));
+		tmp->next = NULL;
 }
 
 void	ReverseRotateAll(t_list **stackA, t_list **stackB)
@@ -79,4 +77,5 @@ void	Push(t_list **stack1, t_list **stack2)
 		tmp = (*stack2);
 		(*stack2) = (*stack2)->next;
 		ft_lstadd_front(stack1, tmp);
+		
 }

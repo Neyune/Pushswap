@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/10 16:02:02 by ereali            #+#    #+#              #
-#    Updated: 2021/07/07 14:31:38 by ereali           ###   ########.fr        #
+#    Updated: 2021/07/07 16:07:37 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ clean:
 				@echo "clean"
 
 fclean:			clean
+				make fclean -C libft
 				@rm -f $(NAME)
 				@echo "fclean"
 
