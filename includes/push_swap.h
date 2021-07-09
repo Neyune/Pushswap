@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:12:24 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 14:15:24 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/09 06:35:03 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,18 @@ void	Rotate(t_list **stack);
 void	RotateAll(t_list **stackA, t_list **stackB);
 void	ReverseRotate(t_list **stack);
 void	ReverseRotateAll(t_list **stackA, t_list **stackB);
-void	Push(t_list **stack1, t_list **stack2);
+void	PushA(t_list **stack1, t_list **stack2);
+void	PushB(t_list **stack1, t_list **stack2);
+// void	PushB(t_list **stack1, t_list **stack2);
 
 t_list	*StackGeneration(int lstlen, int *lst);
 void	Createchain(t_list **root, int *lst, int lstlen);
+void	Find_position(t_list *stack, t_list **root);
+void	Setposition(t_list **root);
 
+int		Chainissort(t_list **a);
 void	Sort3(int *lst, int len);
-
-
-void	Shortsort(t_list **root);
+void	PushAllToA(t_list **a, t_list **b);
+void	ft_order(t_list **a, t_list **b);
 
 #endif

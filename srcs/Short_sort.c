@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:56:17 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/06 13:40:08 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/07 18:57:37 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,4 @@ void	Sort3(int *lst, int len)
 	if (len != 2)
 		free(lst);
 	exit(EXIT_SUCCESS);
-}
-
-void	Shortsort(t_list **root)
-{
-	   t_list	*tmp;
-	   // int		len;
-	   int		smallest;
-	   // int		seclowest;
-	   tmp = (*root);
-	   smallest	= tmp->value;
-	   while (tmp)
-	   {
-		if (tmp->value < smallest)
-		{
-			smallest = tmp->value;
-		}
-	   	tmp = tmp->next;
-	   }
 }
