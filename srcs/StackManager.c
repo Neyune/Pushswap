@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:55:41 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 21:05:58 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/12 22:28:03 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	PrintfChain(t_list	**root)
 	tmp = (*root);
 	while (tmp)
 	{
-		printf("Valeur %d\n", tmp->value);
+		// printf("Valeur %d\n", tmp->value);
 		printf("Position %d\n", tmp->finalpos);
 		tmp = tmp->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/09 06:08:05 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/12 19:43:31 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,10 @@ int	main(int argc, char **argv)
 		Sort3(lst, argc - 1);
 	a = StackGeneration(argc - 1, lst);
 	Setposition(&a);
-	printf("----------------------------0-----------------------------------\n");
-	PrintfChain(&a);
+	// printf("----------------------------0-----------------------------------\n");
+	// PrintfChain(&a);
+
+	// Checkra(&a);
 	// printf("%d\n", Chainissort(&a));
 	ft_order(&a, &b);
 	// PrintfChain(&a);
