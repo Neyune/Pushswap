@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 19:20:10 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 20:05:22 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	*Createlst(char **argv, int argc)
 		i++;
 	}
 	lst = ErrorGest(param);
-	if (!param)
+	if (param)
 		free(param);
 	return (lst);
 }
@@ -103,24 +103,22 @@ int	main(int argc, char **argv)
 	b = NULL;
 	lst = Createlst(argv, argc);
 	Checklst(lst, argc);
-	// if ((argc - 1) <= 3)
-		// Sort3(lst, argc - 1);
+	if ((argc - 1) <= 3)
+		Sort3(lst, argc - 1);
 	a = StackGeneration(argc - 1, lst);
 	Setposition(&a);
 	// printf("----------------------------0-----------------------------------\n");
 	// PrintfChain(&a);
-	freelst(&a);
-	// Needra(&a);
-	// if (argc - 1 <= 5)
-	// {
-	// }
-	// // Checkra(&a);
-	// ft_order(&a, &b);
+	Needra(&a);
+	if (argc - 1 <= 5)
+	{
+		Sort5(a);
+	}
+	ft_order(&a, &b);
 	// PrintfChain(&a);
  	// printf("----------------------------1-----------------------------------\n");
 	// PrintfChain(&b);
 	// printf("----------------------------2-----------------------------------\n");
-	// ft_Order(&a, &b);
 	// PrintfChain(&a);
  	// printf("----------------------------3-----------------------------------\n");
 	// PrintfChain(&b);
@@ -128,14 +126,12 @@ int	main(int argc, char **argv)
 	// PrintfChain(&a);
 	// PrintfChain(&b);
 	// printf("-----------------------------2----------------------------------\n");
- 	// Push(&b, &a);
  	// PrintfChain(&a);
 	// printf("-------------------------------3--------------------------------\n");
  	// PrintfChain(&b);
 	// printf("----------------------------------4-----------------------------\n");
-	// Rotate(&b);
 	// PrintfChain(&b);
-	system("leaks push_swap");
+
 
     return (0);
 }

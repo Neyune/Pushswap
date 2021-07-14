@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:56:17 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/13 22:44:04 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 20:03:00 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	Sort3(int *lst, int len)
 	// cas 2
 	else if ((lst[2] < lst[1]) && (lst[1] < lst[0]))
 		ft_putstr_fd("sa\nrra\n", 1);
-	if (len != 2)
+	if (lst)
 		free(lst);
 	exit(EXIT_SUCCESS);
 }
@@ -44,9 +44,13 @@ void sort5(t_list **a)
 
 	i = 0;
 	tmp = (*a);
-	if (tmp->next->finalpos == (tmp->finalpos - 1))
+	while (tmp->next)
 	{
-		Swap(a);
+		if (tmp->next->finalpos == (tmp->finalpos - 1))
+		{
+			Swap(a);
+		}
+		Needra(a);
+		tmp = tmp->next;
 	}
-
 }

@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:06:55 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 18:29:23 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 19:47:59 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	freelst(t_list **a)
 	t_list	*tmp2;
 
 	tmp = (*a);
-	while (tmp->next)
+	while (tmp)
 	{
 		tmp2 = tmp->next;
 		free(tmp);

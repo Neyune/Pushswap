@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:54:58 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 18:03:03 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 19:54:35 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,6 @@ void	ft_order(t_list **a, t_list **b)
 		i++;
 		Needra(a);
 	}
+	freelst(a);
+	exit(EXIT_SUCCESS);
 }
