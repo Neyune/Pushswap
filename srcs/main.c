@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/12 19:43:31 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 19:20:10 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,19 @@ int	main(int argc, char **argv)
 	b = NULL;
 	lst = Createlst(argv, argc);
 	Checklst(lst, argc);
-	if ((argc - 1) <= 3)
-		Sort3(lst, argc - 1);
+	// if ((argc - 1) <= 3)
+		// Sort3(lst, argc - 1);
 	a = StackGeneration(argc - 1, lst);
 	Setposition(&a);
 	// printf("----------------------------0-----------------------------------\n");
 	// PrintfChain(&a);
-
-	// Checkra(&a);
-	// printf("%d\n", Chainissort(&a));
-	ft_order(&a, &b);
+	freelst(&a);
+	// Needra(&a);
+	// if (argc - 1 <= 5)
+	// {
+	// }
+	// // Checkra(&a);
+	// ft_order(&a, &b);
 	// PrintfChain(&a);
  	// printf("----------------------------1-----------------------------------\n");
 	// PrintfChain(&b);
@@ -132,6 +135,7 @@ int	main(int argc, char **argv)
 	// printf("----------------------------------4-----------------------------\n");
 	// Rotate(&b);
 	// PrintfChain(&b);
+	system("leaks push_swap");
 
     return (0);
 }

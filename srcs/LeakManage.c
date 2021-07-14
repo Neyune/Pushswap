@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:06:55 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 14:26:34 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 18:29:23 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,18 @@ void	ExitError(void)
 {
 	ft_putstr_fd("Error\n", 1);
 	exit(EXIT_FAILURE);
+}
+
+void	freelst(t_list **a)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = (*a);
+	while (tmp->next)
+	{
+		tmp2 = tmp->next;
+		free(tmp);
+		tmp = tmp2;
+	}
 }

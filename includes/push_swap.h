@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:12:24 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/09 06:35:03 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/14 18:29:11 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int		*Createlst(char **argv, int argc);
 void	freetab(char **tab, int i);
 void	ExitError(void);
 int		ft_atof(char *str);
+void	freelst(t_list **a);
+
 
 t_list	*SecondToLast(t_list **stack);
 t_list	*GetLastStack(t_list **stack);
@@ -49,16 +51,16 @@ void	ReverseRotate(t_list **stack);
 void	ReverseRotateAll(t_list **stackA, t_list **stackB);
 void	PushA(t_list **stack1, t_list **stack2);
 void	PushB(t_list **stack1, t_list **stack2);
-// void	PushB(t_list **stack1, t_list **stack2);
 
 t_list	*StackGeneration(int lstlen, int *lst);
 void	Createchain(t_list **root, int *lst, int lstlen);
 void	Find_position(t_list *stack, t_list **root);
 void	Setposition(t_list **root);
 
-int		Chainissort(t_list **a);
+int		Chainissort(t_list *a);
 void	Sort3(int *lst, int len);
 void	PushAllToA(t_list **a, t_list **b);
+void	Needra(t_list **a);
 void	ft_order(t_list **a, t_list **b);
 
 #endif
