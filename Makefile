@@ -6,7 +6,7 @@
 #    By: ereali <ereali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/10 16:02:02 by ereali            #+#    #+#              #
-#    Updated: 2021/07/14 19:45:08 by ereali           ###   ########.fr        #
+#    Updated: 2021/07/17 20:42:51 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ vpath %.c $(foreach dir, $(SRC_DIR), $(dir):)
 
 ##List every .c found inside SRC_DIR
 SRC = ErrorManage.c main.c LeakManage.c Basics.c StackManager.c Short_sort.c \
-		Sort_fonction.c SortAll.c SortAll_utils.c
+		Sort_fonction.c SortAll.c SortAll_utils.c Sort_fonction_Rotate.c
 
 ##Transform and place every .o from SRC
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))

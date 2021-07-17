@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 20:05:22 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/17 21:16:02 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ char	*strjoinspace(char *s1, char const *s2)
 
 void	Checklst(int *lst, int argc)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < argc - 2)
 	{
-		if ( lst[i] > lst[i + 1])
-			return	;
+		if (lst[i] > lst[i + 1])
+			return ;
 		i++;
 	}
 	free(lst);
@@ -77,9 +77,8 @@ int	*Createlst(char **argv, int argc)
 	int		i;
 
 	i = 1;
-	// printf("ARGC = %d\n", argc);
 	if (argc < 2)
-		return(0);
+		return (0);
 	param = (char *)malloc((sizeof (char) * (ft_strlen(argv[1]) + 1)));
 	if (!param)
 		return (NULL);
@@ -107,31 +106,11 @@ int	main(int argc, char **argv)
 		Sort3(lst, argc - 1);
 	a = StackGeneration(argc - 1, lst);
 	Setposition(&a);
-	// printf("----------------------------0-----------------------------------\n");
-	// PrintfChain(&a);
 	Needra(&a);
 	if (argc - 1 <= 5)
 	{
-		Sort5(a);
+		sort5(&a, &b);
 	}
 	ft_order(&a, &b);
-	// PrintfChain(&a);
- 	// printf("----------------------------1-----------------------------------\n");
-	// PrintfChain(&b);
-	// printf("----------------------------2-----------------------------------\n");
-	// PrintfChain(&a);
- 	// printf("----------------------------3-----------------------------------\n");
-	// PrintfChain(&b);
-	// Push(&b, &a);
-	// PrintfChain(&a);
-	// PrintfChain(&b);
-	// printf("-----------------------------2----------------------------------\n");
- 	// PrintfChain(&a);
-	// printf("-------------------------------3--------------------------------\n");
- 	// PrintfChain(&b);
-	// printf("----------------------------------4-----------------------------\n");
-	// PrintfChain(&b);
-
-
-    return (0);
+	return (0);
 }

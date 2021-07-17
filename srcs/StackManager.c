@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:55:41 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 19:39:14 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/17 21:17:57 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Createchain(t_list **root, int *lst, int lstlen)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < lstlen)
@@ -31,7 +31,6 @@ void	PrintfChain(t_list	**root)
 	tmp = (*root);
 	while (tmp)
 	{
-		// printf("Valeur %d\n", tmp->value);
 		printf("Position %d\n", tmp->finalpos);
 		tmp = tmp->next;
 	}
@@ -43,8 +42,7 @@ t_list	*StackGeneration(int lstlen, int *lst)
 
 	a = NULL;
 	Createchain(&a, lst, lstlen);
-
 	if (ft_lstsize(a) <= 5)
 		free(lst);
-	return(a);
+	return (a);
 }

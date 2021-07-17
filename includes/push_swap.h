@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:12:24 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/14 18:29:11 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/17 20:16:34 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-
 # include "../libft/libft.h"
 
-// typedef struct		s_list
-// {
-// 	int				value;
-// 	struct s_list	*next;
-// }					t_list;
 void	PrintfChain(t_list	**root);
 
 int		main(int argc, char **argv);
@@ -40,10 +34,10 @@ void	ExitError(void);
 int		ft_atof(char *str);
 void	freelst(t_list **a);
 
-
 t_list	*SecondToLast(t_list **stack);
 t_list	*GetLastStack(t_list **stack);
 void	Swap(t_list **stack);
+void	SwapB(t_list **stack);
 void	SwapAll(t_list **stackA, t_list **stackB);
 void	Rotate(t_list **stack);
 void	RotateAll(t_list **stackA, t_list **stackB);
@@ -57,10 +51,12 @@ void	Createchain(t_list **root, int *lst, int lstlen);
 void	Find_position(t_list *stack, t_list **root);
 void	Setposition(t_list **root);
 
+void	Needra(t_list **a);
 int		Chainissort(t_list *a);
 void	Sort3(int *lst, int len);
+void	Sort3Chain(t_list **a, unsigned int len);
 void	PushAllToA(t_list **a, t_list **b);
-void	Needra(t_list **a);
+void	sort5(t_list **a, t_list **b);
 void	ft_order(t_list **a, t_list **b);
 
 #endif

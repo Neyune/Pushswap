@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 19:57:07 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/15 16:10:15 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	strisdigit(char *args)
 	while ((args[i] && ft_isdigit(args[i])) || (args[i] && ft_isspace(args[i]))
 		|| ((args[i] == '-') && ft_isdigit(args[i + 1])))
 		i++;
-
-	// printf("%s\n", args);
 	if (args[i])
 	{
 		free(args);
@@ -54,11 +52,6 @@ int	*atoitab(char **tab)
 		i++;
 	}
 	i = 0;
-	// while (i < lentab(tab))
-	// {
-	// 			printf("%d\n", lst[i]);
-	// 			i++;
-	// }
 	return (lst);
 }
 
@@ -70,11 +63,9 @@ int	*ErrorGest(char *args)
 	int		j;
 
 	i = -1;
-	// printf("ARGC = %d\n", argc);
 	strisdigit(args);
 	tab = ft_split(args, ' ');
 	lst = atoitab(tab);
-	//printf("LenTab = %d\n", lentab(tab));
 	freetab(tab, (lentab(tab) - 1));
 	while (i < (lentab(tab) - 2))
 	{
