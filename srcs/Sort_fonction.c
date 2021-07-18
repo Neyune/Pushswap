@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 22:25:46 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 21:20:54 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 01:21:50 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,20 @@ void	Swap(t_list **stack)
 
 void	SwapB(t_list **stack)
 {
-	int		first;
-	t_list	*tmp;
+	unsigned int	i;
+	int				first;
+	t_list			*tmp;
 
 	tmp = (*stack);
 	if (ft_lstsize(tmp) == 1)
 		return ;
 	first = tmp->value;
+	i = tmp->finalpos;
 	(*stack)->value = tmp->next->value;
+	(*stack)->finalpos = tmp->next->finalpos;
 	tmp = tmp->next;
 	tmp->value = first;
+	tmp->finalpos = i;
 	ft_putstr_fd("sb\n", 1);
 }
 

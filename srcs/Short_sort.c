@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:56:17 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 21:20:42 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 04:34:48 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	Sort3(int *lst, int len)
 	else if ((lst[1] < lst[0]) && (lst[0] < lst[2]))
 		ft_putstr_fd("sa\n", 1);
 	else if ((lst[1] < lst[2]) && (lst[2] < lst[0]))
-		ft_putstr_fd("rra\n", 1);
-	else if ((lst[2] < lst[0]) && (lst[0] < lst[1]))
 		ft_putstr_fd("ra\n", 1);
+	else if ((lst[2] < lst[0]) && (lst[0] < lst[1]))
+		ft_putstr_fd("rra\n", 1);
 	else
 		ft_putstr_fd("sa\nrra\n", 1);
 	if (lst)
@@ -31,13 +31,11 @@ void	Sort3(int *lst, int len)
 	exit(EXIT_SUCCESS);
 }
 
-void	Sort3Chain(t_list **a, unsigned int len)
+void	Sort3Chain(t_list **a)
 {
 	t_list	*tmp;
 
 	tmp = (*a);
-	if (len != 3)
-		return ;
 	if ((tmp->finalpos < tmp->next->next->finalpos)
 		&& (tmp->next->next->finalpos < tmp->next->finalpos))
 	{
@@ -53,10 +51,29 @@ void	Sort3Chain(t_list **a, unsigned int len)
 	else if ((tmp->next->next->finalpos < tmp->finalpos)
 		&& (tmp->finalpos < tmp->next->finalpos))
 		Rotate(a);
-	else
+	else if ((tmp->next->next->finalpos < tmp->next->finalpos)
+		&& (tmp->next->finalpos < tmp->finalpos))
 	{
 		Swap(a);
 		ReverseRotate(a);
+	}
+}
+
+void	CheckB(t_list **b, unsigned int maxpos)
+{
+	t_list	*tmp;
+	int		i;
+
+	tmp = (*b);
+	i = 0;
+	if (ft_lstsize(tmp) != 2)
+		return ;
+	if (tmp->next)
+	{
+		if (tmp->next->finalpos == 0)
+			SwapB(b);
+		if (tmp->finalpos == maxpos - 1)
+			SwapB(b);
 	}
 }
 
@@ -72,11 +89,13 @@ void	sort5(t_list **a, t_list **b)
 		PushB(b, a);
 		i++;
 	}
-	i = len ;
-	Sort3Chain(a, ft_lstsize(*a));
+	i = len;
+	Sort3Chain(a);
+	CheckB(b, len);
 	while ((*b) != NULL)
 	{
-		if ((*a)->finalpos == ((*b)->finalpos + 1) || ((*b)->finalpos == i + 1))
+		if ((*a)->finalpos == ((*b)->finalpos + 1) || ((*b)->finalpos == i + 1)
+			|| ((*b)->finalpos == 0 && i == len - 1))
 			PushA(a, b);
 		else
 		{
@@ -85,6 +104,4 @@ void	sort5(t_list **a, t_list **b)
 		}
 	}
 	Needra(a);
-	freelst(a);
-	exit(EXIT_SUCCESS);
 }

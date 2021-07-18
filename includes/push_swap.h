@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:12:24 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 20:16:34 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 02:00:22 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	Setposition(t_list **root);
 void	Needra(t_list **a);
 int		Chainissort(t_list *a);
 void	Sort3(int *lst, int len);
-void	Sort3Chain(t_list **a, unsigned int len);
+void	Sort3Chain(t_list **a);
 void	PushAllToA(t_list **a, t_list **b);
 void	sort5(t_list **a, t_list **b);
 void	ft_order(t_list **a, t_list **b);

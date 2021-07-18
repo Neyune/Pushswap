@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:31:13 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/07 18:58:32 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 02:05:42 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*SecondToLast(t_list **stack)
 {
 	t_list	*tmp;
 
-	tmp =(*stack);
+	tmp = (*stack);
 	while (tmp->next->next)
 		tmp = tmp->next;
 	return (tmp);
@@ -34,8 +34,36 @@ t_list	*GetLastStack(t_list **stack)
 {
 	t_list	*tmp;
 
-	tmp =(*stack);
+	tmp = (*stack);
 	while (tmp->next)
 		tmp = tmp->next;
 	return (tmp);
 }
+
+// long int	ft_ato(char *str)
+// {
+// 	int			negatif;
+// 	int			i;
+// 	long int	nb;
+//
+// 	negatif = 0;
+// 	i = 0;
+// 	nb = 0;
+// 	if (str[i] == '\0')
+// 		return (0);
+// 	while (ft_isspace == 1)
+// 		i++;
+// 	if ()
+// 	if (str[i] == '-')
+// 		negatif = 1;
+// 	if (str[i] == '+' || str[i] == '-')
+// 		i++;
+// 	while (str[i] >= '0' && str[i] <= '9')
+// 	{
+// 		nb = nb * 10 + str[i] - '0';
+// 		i++;
+// 	}
+// 	if (negatif == 1)
+// 		return (-nb);
+// 	return (nb);
+// }

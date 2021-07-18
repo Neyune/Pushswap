@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/15 16:10:15 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 05:29:37 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ int	*atoitab(char **tab)
 	while (i < lentab(tab))
 	{
 		lst[i] = ft_atoi(tab[i]);
+		if (ft_strncmp(tab[i], ft_itoa(lst[i]), (ft_strlen(tab[i]) - 1)) != 0)
+		{
+			freetab(tab, lentab(tab) - 1);
+			free(lst);
+			ExitError();
+		}
 		i++;
 	}
 	i = 0;

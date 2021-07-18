@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 21:16:02 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/18 04:56:50 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ int	main(int argc, char **argv)
 	if (argc - 1 <= 5)
 	{
 		sort5(&a, &b);
+		freelst(&a);
+		exit(EXIT_SUCCESS);
 	}
 	ft_order(&a, &b);
 	return (0);
