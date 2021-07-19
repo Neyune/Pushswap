@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:56:17 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/18 04:34:48 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/19 23:51:05 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,8 @@ void	Sort3Chain(t_list **a)
 void	CheckB(t_list **b, unsigned int maxpos)
 {
 	t_list	*tmp;
-	int		i;
 
 	tmp = (*b);
-	i = 0;
 	if (ft_lstsize(tmp) != 2)
 		return ;
 	if (tmp->next)

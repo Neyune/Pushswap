@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:06:55 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 20:06:47 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/19 23:53:02 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	freetab(char **tab, int i)
 
 void	ExitError(void)
 {
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 

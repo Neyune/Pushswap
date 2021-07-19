@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:15:22 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 21:23:22 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/19 23:50:03 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list	*tmp;
-
-	tmp = (*alst);
 	if (!(*alst))
 	{
 		(*alst) = new;
