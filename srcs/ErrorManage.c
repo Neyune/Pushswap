@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/18 05:29:37 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/20 01:54:01 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	*ErrorGest(char *args)
 	strisdigit(args);
 	tab = ft_split(args, ' ');
 	lst = atoitab(tab);
-	freetab(tab, (lentab(tab) - 1));
 	while (i < (lentab(tab) - 2))
 	{
 		i++;
@@ -81,9 +80,11 @@ int	*ErrorGest(char *args)
 			j++;
 		if (lst[j] == lst[i])
 		{
+			freetab(tab, (lentab(tab) - 1));
 			free(lst);
 			ExitError();
 		}
 	}
+	freetab(tab, (lentab(tab) - 1));
 	return (lst);
 }
