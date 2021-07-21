@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/20 01:54:01 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/21 02:45:40 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ int	lentab(char **tab)
 	return (i);
 }
 
+void	CheckMaxInt(char **tab, int *lst, int i)
+{
+	char	*str;
+
+	str = ft_itoa(lst[i]);
+	if (ft_strncmp(tab[i], str, (ft_strlen(tab[i]) - 1)) != 0)
+	{
+		freetab(tab, lentab(tab) - 1);
+		free(lst);
+		free(str);
+		ExitError();
+	}
+	free(str);
+}
+
 int	*atoitab(char **tab)
 {
 	int	*lst;
@@ -49,12 +64,7 @@ int	*atoitab(char **tab)
 	while (i < lentab(tab))
 	{
 		lst[i] = ft_atoi(tab[i]);
-		if (ft_strncmp(tab[i], ft_itoa(lst[i]), (ft_strlen(tab[i]) - 1)) != 0)
-		{
-			freetab(tab, lentab(tab) - 1);
-			free(lst);
-			ExitError();
-		}
+		CheckMaxInt(tab, lst, i);
 		i++;
 	}
 	i = 0;

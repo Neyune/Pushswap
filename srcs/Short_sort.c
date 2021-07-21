@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:56:17 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/19 23:51:05 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/21 01:00:32 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ void	Sort3(int *lst, int len)
 		ft_putstr_fd("rra\n", 1);
 	else
 		ft_putstr_fd("sa\nrra\n", 1);
-	if (lst)
-		free(lst);
+	free(lst);
 	exit(EXIT_SUCCESS);
 }
 

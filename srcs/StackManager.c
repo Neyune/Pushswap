@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:55:41 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/17 21:17:57 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/21 00:57:38 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ t_list	*StackGeneration(int lstlen, int *lst)
 
 	a = NULL;
 	Createchain(&a, lst, lstlen);
-	if (ft_lstsize(a) <= 5)
-		free(lst);
+	free(lst);
 	return (a);
 }
