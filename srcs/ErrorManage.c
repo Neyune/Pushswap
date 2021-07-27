@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/23 00:36:49 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/27 03:46:57 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	strisdigit(char *args)
 
 	i = 1;
 	while ((args[i] && ft_isdigit(args[i])) || (args[i] && ft_isspace(args[i]))
-		|| ((args[i] == '-') && ft_isdigit(args[i + 1])))
+		|| ((args[i] == '-') && ft_isdigit(args[i + 1]))
+		|| ((args[i] == '+') && ft_isdigit(args[i + 1])))
 		i++;
 	if (args[i])
 	{
