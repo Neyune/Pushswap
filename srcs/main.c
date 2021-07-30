@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/20 01:40:23 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/21 03:21:18 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int	*Createlst(char **argv, int argc)
 		return (0);
 	param = (char *)malloc((sizeof (char) * (ft_strlen(argv[1]) + 1)));
 	if (!param)
-		return (NULL);
+		exit(EXIT_FAILURE);
+	ft_bzero(param, ft_strlen(argv[1]) + 1);
 	while (i < argc)
 	{
 		param = strjoinspace(param, argv[i]);

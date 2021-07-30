@@ -24,18 +24,6 @@ void	Createchain(t_list **root, int *lst, int lstlen)
 	}
 }
 
-void	PrintfChain(t_list	**root)
-{
-	t_list	*tmp;
-
-	tmp = (*root);
-	while (tmp)
-	{
-		printf("Position %d\n", tmp->finalpos);
-		tmp = tmp->next;
-	}
-}
-
 t_list	*StackGeneration(int lstlen, int *lst)
 {
 	t_list	*a;

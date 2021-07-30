@@ -61,7 +61,7 @@ int	*atoitab(char **tab)
 	i = 0;
 	lst = (int *)malloc(sizeof (int) * lentab(tab));
 	if (!lst)
-		return (NULL);
+		exit(EXIT_FAILURE);
 	while (i < lentab(tab))
 	{
 		lst[i] = ft_atoi(tab[i]);
