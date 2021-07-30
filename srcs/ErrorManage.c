@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 17:47:35 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/27 03:46:57 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/30 16:10:12 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ int	*atoitab(char **tab)
 	i = 0;
 	lst = (int *)malloc(sizeof (int) * lentab(tab));
 	if (!lst)
+	{
+		freetab(tab, lentab(tab) - 1);
 		exit(EXIT_FAILURE);
+	}
 	while (i < lentab(tab))
 	{
 		lst[i] = ft_atoi(tab[i]);
@@ -72,7 +75,7 @@ int	*atoitab(char **tab)
 	return (lst);
 }
 
-int	*ErrorGest(char *args)
+int	*ErrorGest(char *args, int argc)
 {
 	char	**tab;
 	int		*lst;
@@ -83,6 +86,8 @@ int	*ErrorGest(char *args)
 	strisdigit(args);
 	tab = ft_split(args, ' ');
 	lst = atoitab(tab);
+	if ((lentab(tab)) != (argc - 1))
+		ErrorgestFree(tab, lst);
 	while (i < (lentab(tab) - 2))
 	{
 		i++;
@@ -90,11 +95,7 @@ int	*ErrorGest(char *args)
 		while (j < (lentab(tab) - 1) && (lst[j] != lst[i]))
 			j++;
 		if (lst[j] == lst[i])
-		{
-			freetab(tab, (lentab(tab) - 1));
-			free(lst);
-			ExitError();
-		}
+			ErrorgestFree(tab, lst);
 	}
 	freetab(tab, (lentab(tab) - 1));
 	return (lst);

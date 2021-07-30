@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:43:16 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/21 03:21:18 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/29 18:53:20 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	*Createlst(char **argv, int argc)
 		param = strjoinspace(param, argv[i]);
 		i++;
 	}
-	lst = ErrorGest(param);
+	lst = ErrorGest(param, argc);
 	if (param)
 		free(param);
 	return (lst);

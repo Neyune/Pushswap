@@ -6,7 +6,7 @@
 /*   By: ereali <ereali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:06:55 by ereali            #+#    #+#             */
-/*   Updated: 2021/07/19 23:53:02 by ereali           ###   ########.fr       */
+/*   Updated: 2021/07/30 12:19:57 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,11 @@ void	freelst(t_list **a)
 		free(tmp);
 		tmp = tmp2;
 	}
+}
+
+void	ErrorgestFree(char **tab, int *lst)
+{
+	freetab(tab, (lentab(tab) - 1));
+	free(lst);
+	ExitError();
 }
